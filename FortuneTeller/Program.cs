@@ -10,7 +10,7 @@ namespace FortuneTeller
     {
         static void Main(string[] args)
         {
-
+            string howIGetAround = "";
             // This is as fancy as it gets right now, until I learn how to add colors and change fonts!
             Console.WriteLine("***************WELCOME*****************\n");
 
@@ -46,8 +46,10 @@ namespace FortuneTeller
             userColor = userColor.ToUpper();
 
             if (userColor.ToUpper() == "HELP")
-            { Console.WriteLine("\nR-Red\n O-Orange\n Y-Yellow\n G-Green\n B-Blue\n I-Indigo\n V-Violet\n What color would you like to choose?"); }
-            userColor = Console.ReadLine();
+            {
+                Console.WriteLine("\nR-Red\n O-Orange\n Y-Yellow\n G-Green\n B-Blue\n I-Indigo\n V-Violet\n What color would you like to choose?");
+                userColor = Console.ReadLine();
+            }
 
             //Ask the user for the number of siblings the user has
             Console.WriteLine("How Many siblings do you have? Please enter as a number,\n");
@@ -141,10 +143,9 @@ namespace FortuneTeller
             //{ Console.WriteLine("Your future transportation will be the Dolorean from \"Back to the Future\""); }
 
 
-            string howIGetAround = Console.ReadLine();  //when I concatenate everything at the end, my paragraph doesn't read this string, yet I have no red squiggles
-                                                         //not sure what happened here! Did I not put my variable in the right place?
+            
 
-            switch (userColor.ToUpper())
+            switch (userColor.ToLower())
             {
                 case "red":
                     howIGetAround = "a rocket ship";
@@ -205,7 +206,7 @@ namespace FortuneTeller
                     //The user’s fortune should be written as such:
 
                     //[First Name] [Last Name]
-                    Console.WriteLine(firstName + "" + lastName + "will retire in " + yayRetirement + " with" + caChing + "," + " a vacation home in " + vacationSpot + "and a" + howIGetAround + ".");
+                    Console.WriteLine(firstName + "" + lastName + "will retire in " + yayRetirement + " with" + caChing + "," + " a vacation home in " + vacationSpot + "and " + howIGetAround + ".");
                     //will retire in [# of Years] with [Amount of Money] in the bank
                     //a vacation home in [Vacation Spot] 
                     //and a [Mode of Transportation].
